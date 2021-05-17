@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <textarea name="content" id="content" rows="10" cols="80"></textarea>
+    <button id="alertContent" onclick="GetHtml();">取得HTML</button>
+
+    <label id="lblHtmlResult"></label>
+
+    <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="/ckeditor/samples/js/sample.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+
+    <script>
+        CKEDITOR.replace('content', {
+
+        });
+
+        // function GetHtml() {
+        //     var lblHtmlResult = document.getElementById('lblHtmlResult').innerText;
+        //      console.log($('textarea[name=content]').val());
+        //     console.log(CKEDITOR.instances.editorDemo.getData());
+        //     lblHtmlResult = CKEDITOR.instances.editorDemo.getData();
+        // }
+         $('#alertContent').click(function () {
+        CKEDITOR.instances.editorDemo.updateElement();
+        console.log($('textarea[name=content]').val());
+        console.log(CKEDITOR.instances.editorDemo.getData());
+        $('#lblHtmlResult').html() = CKEDITOR.instances.editorDemo.getData();
+        });
+    </script>
+    
+</body>
+</html>
